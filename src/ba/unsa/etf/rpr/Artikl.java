@@ -9,7 +9,7 @@ public class Artikl {
         this.kod=kod;
         this.cijena=cijena;
     }
-    public void getNaziv() {return naziv;}
-    public void getKod() {return kod;}
-    public void getCijena() {return cijena;}
+    public String[] getNaziv() {return naziv;}
+    public int getKod() {return kod;}
+    public String[] getCijena() {return cijena;}
 }
