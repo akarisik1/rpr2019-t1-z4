@@ -11,15 +11,18 @@ public class Supermarket {
     }
         public Artikl[] getArtikli() {return sviartikli;}
 
-        public void izbaciArtiklSaKodom(int kod) {
+        public Artikl izbaciArtiklSaKodom(int kod) {
+            Artikl a=null;
             for(int i=0; i<brojArtikalaUMarketu; i++) {
                 if (kod == sviartikli[i].getKod()) {
+                    a=sviartikli[i];
                     for(int j=i; j<brojArtikalaUMarketu-1; j++)
                         sviartikli[j]=sviartikli[j+1];
                 }
                 sviartikli[brojArtikalaUMarketu-1]=null;
                 brojArtikalaUMarketu--;
                     }
+            return a;
             }
 
 
