@@ -12,7 +12,9 @@ class Artikl {
         this.kod = kod;
     }
 
-    String getNaziv() {return naziv;}
+    String getNaziv() {
+        return naziv;
+    }
 
     int getCijena() {return cijena;}
 

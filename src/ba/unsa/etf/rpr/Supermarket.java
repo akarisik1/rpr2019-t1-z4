@@ -1,6 +1,9 @@
 package ba.unsa.etf.rpr;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-class Supermarket {
+
+public class Supermarket {
 
     private Artikl[] sviArtikli =  new Artikl[1000];
     private static int brojArtikala = 0;

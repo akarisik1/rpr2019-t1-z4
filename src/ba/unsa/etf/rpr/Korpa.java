@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-class Korpa {
+public class Korpa {
 
     private Artikl[] korpaArtikli = new Artikl[50];
     private int brojArtikalaKorpa = 0;
