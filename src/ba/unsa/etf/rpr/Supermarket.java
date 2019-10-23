@@ -1,29 +1,43 @@
 package ba.unsa.etf.rpr;
 
-public class Supermarket {
-    Artikl[] sviartikli = new Artikl[1000];
-    int  brojArtikalaUMarketu=0;
-    public void dodajArtikl(Artikl artikl) {
-        if (brojArtikalaUMarketu < 1000) {
-            sviartikli[brojArtikalaUMarketu] = artikl;
-            brojArtikalaUMarketu++;
+class Supermarket {
+
+    private Artikl[] sviArtikli =  new Artikl[1000];
+    private static int brojArtikala = 0;
+
+    void dodajArtikl(Artikl a) {
+        if (brojArtikala < 1000) {
+            sviArtikli[brojArtikala] = a;
+            brojArtikala++;
         }
     }
-        public Artikl[] getArtikli() {return sviartikli;}
 
-        public Artikl izbaciArtiklSaKodom(int kod) {
-            Artikl a=null;
-            for(int i=0; i<brojArtikalaUMarketu; i++) {
-                if (kod == sviartikli[i].getKod()) {
-                    a=sviartikli[i];
-                    for(int j=i; j<brojArtikalaUMarketu-1; j++)
-                        sviartikli[j]=sviartikli[j+1];
+    Artikl[] getArtikli() {
+        return sviArtikli;
+    }
+
+    Artikl izbaciArtiklSaKodom(String kod){
+        Artikl izbaceni = null;
+        for(int i=0; i<brojArtikala; i++){
+            if(kod.equals(sviArtikli[i].getKod())) {
+                izbaceni = sviArtikli[i];
+                for(int j=i+1; j<brojArtikala; j++) {
+                    sviArtikli[i] = sviArtikli[j];
+                    i = j;
                 }
-                sviartikli[brojArtikalaUMarketu-1]=null;
-                brojArtikalaUMarketu--;
-                    }
-            return a;
+                sviArtikli[brojArtikala-1] = null;
+                brojArtikala--;
             }
+        }
+        return izbaceni;
+    }
 
-
+    int getBrojArtikala() {return brojArtikala;}
 }
+
+
+
+
+
+
+
