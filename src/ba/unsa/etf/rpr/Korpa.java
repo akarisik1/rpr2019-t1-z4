@@ -5,7 +5,7 @@ public class Korpa {
     private Artikl[] korpaArtikli = new Artikl[50];
     private int brojArtikalaKorpa = 0;
 
-    boolean dodajArtikl(Artikl a) {
+    boolean  dodajArtikl(Artikl a) {
         if(brojArtikalaKorpa < 50 ) {
             brojArtikalaKorpa++;
             korpaArtikli[brojArtikalaKorpa-1] = a;
